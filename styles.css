@@ -261,6 +261,8 @@ button:hover {
     flex-direction: column;
     padding: 10px;
     position: relative;
+    height: 100%; /* I am adding this to ensure it resizes with its parent */
+    box-sizing: border-box; /* I am adding this to account for padding */
 }
 
 .tool-btn {
@@ -480,10 +482,11 @@ button:hover {
     #app-container {
         flex-direction: column;
         transition: height 0.3s ease-in-out;
+        height: calc(100vh - 60px); /* I am ensuring base height is set correctly for mobile layout */
     }
 
     #app-container.panel-visible {
-        height: calc(100vh - 60px - 50vh); /* Full height - toolbar - panel height */
+        height: calc(50vh - 60px); /* Simplified calculation and ensures correct resizing */
     }
 
     #main-content {
